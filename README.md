@@ -45,5 +45,47 @@ SOFTWARE
 To solve:  
 Use the kextutil’s test parameter -t for more information. If it reveals the message "File owner/permissions are incorrect (must be root:wheel, nonwritable by group/other):”, change the permissions by running: $ sudo chown -R root:wheel osxpmem.app/. 
    - OSXPMem can be found at: http://releases.rekall-forensic.com/
+ 
+- YARA
+  - YARA is a tool designed to help malware researchers identify and classify malware samples by using regular expression matching. The project is open source and available to anyone who wants to use it. 
+  - I used YARA in a Ubuntu image to create rules for finding regular expressions in a text document rather than working with malware signatures. The purpose was simply to learn and understand the feel of this software and then to extend that to what it would be like to work with malware. 
+  - YARA documentation can be found at: https://yara.readthedocs.io/en/latest/
+    - Indcluded in the documentation are all the instructions necessary to install and get started with YARA. 
+   YARA did have a bit of a learning curve that took some time to grasp, but overall the software is not difficult to learn and implement. 
+   
+- Grep, Suricata, and tcpdump
+  - These three tools are clustered together because I used them in conjunction with each other for one lab assignment. 
+  - Grep processes text line by line and will print out the matching pattern that is defined by the user. Suricata is an open source threat detection engine. It is used in IDS, IPS, secutiry monitoring, and pcap processing. The latter is what I used it for. tcpdump is a command line packet analyzer. It was used with suricata for analyzing a sample pcap.
+  - Suricata can be found at: https://suricata-ids.org/
+  - Grep and tcpdump are often included in Linux distros
+
+- Wireshark
+  - Wireshark is a commonly used network protocol analyzer. It can be used to look at network traffic as a whole, or it can be drilled down into to see specific network behavior at the packet level. 
+  - This tool was used multiple times throughout the semester to analyze various network behaviors. Most of the time it was used for analyzing previously captuted pcaps, but for one lab I did use it to capture and analyze mirrored activity across a switch.
+  - Wireshark can be found at: https://www.wireshark.org/
+
+- FTK Imager
+  - Listed separately from FTK listed above. FTK Imager is an imaging tool used for data acquision for forensic evidence. This program does not analyze the drive image like the tool previously listed. 
+  - FTK Imager was a very easy tool to use. It was used with a write blocker to take a bit for bit physical copy of two computer hard drives. The program even creates an case file for you as you are creating the copy.
+  - FTK Imager can be found at: https://accessdata.com/product-download/ftk-imager-version-4-2-1
+
+- Netcat
+  - A computer networking utility tool used for remote data acquisition.
+  - Netcat can easily be installed on a Linux distro. I used it on a Ubuntu image to acquire data from another Ubuntu VM image. 
   
+- Snort
+  - "An open source intrusion prevention system capable of real-time traffic analysis and packet logging." It can also be used for offline packet analysis on previously captured network traffic.
+  - In class, we were able to download and install snort with the speicific configurations we were given by the professor. We only used it briefly for a short analysis of a packet capture. 
+  - Snort can be found at: https://www.snort.org/
+  
+- Volatility
+  - An open source tool for memory acquision and analysis. This program can even be used as a digital forensics framework for incident response and malware analysis in a dymamic case. 
+  - Volatility is a solid command line memory analysis tool that is not difficult to use. When you need help to figure out an applicable command, the help menu gives a good description of the options that are available according to the profile/image you are running analysis against. 
+  - Sometimes you have to search around for a better explanation for the information you are given by Volatility. There were multiple processes and functions I was not familiar with, so I had to learn what they were in order to determine if they were affected by malware or not.
+  - Volatility can be found at: https://www.volatilityfoundation.org/  
+  
+- Autopsy
+  - Autopsy is an open source digital forensics platform. Used for hard drive investigation, the program will ingest a drive image and perform an automatic initial analysis of the image. 
+  - Autopsy was far easier to use than FTK for me. The initial analysis went through and compiled a folder of files according to their extensions so it was really easy to find a group of images I was looking for. It also created a directory of files that were of mismatched extensions so I could look directly at those and determine that they were also images I was looking for, even though they did not have image extensions. 
+  - Autopsy can be found at: https://www.autopsy.com/
  
